@@ -1,5 +1,5 @@
 
-# 날씨 [Nalssi] - Weather Applcation
+# 날씨 [Nalssi] - Weather Application
 
 This is simple Weather Application Named - 날씨 [Nalssi]
 This Weather Applcation will  have Three Sub-Applcation
