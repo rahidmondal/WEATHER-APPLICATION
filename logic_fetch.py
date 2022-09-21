@@ -8,15 +8,15 @@ def get_weather(city:str): #weather Fetching Logic
     request_url = (base_url+api_key+'&q='+city+'&aqi=no')
     response = requests.request('GET',request_url)
     parsed = response.json()
-    global time,location,temp_C,feelsLikeTemp_C,condition,humidity,cloud
+    global time,city_name,temp_C,feelsLikeTemp_C,condition,humidity,cloud
     time = (parsed['location']['localtime'])
-    location = (parsed['location']['name'])
+    city_name = (parsed['location']['name'])
     temp_C = (parsed['current']['temp_c'])
     feelsLikeTemp_C = (parsed['current']['feelslike_c'])
     condition = (parsed['current']['condition']['text'])
     humidity = (parsed['current']['humidity'])
     cloud = (parsed['current']['cloud'])
-    return time,location,temp_C,feelsLikeTemp_C,condition,humidity,cloud
+    return time,city_name,temp_C,feelsLikeTemp_C,condition,humidity,cloud
 
 if __name__ == '__main__': #Solo console build- wont execute in foreing file 
     print("=----------------------------------------------=")
@@ -31,7 +31,7 @@ if __name__ == '__main__': #Solo console build- wont execute in foreing file
         else :
             get_weather(city)
             print('Current Time : ',time)
-            print('Location : ',location)
+            print('Location : ',city_name)
             print('Temperature : ',temp_C)
             print("Real Feel :",feelsLikeTemp_C)
             print('Condition : ',condition)

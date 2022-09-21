@@ -1,17 +1,47 @@
 from tkinter import *
+from logic_fetch import *
+import logic_fetch
+
+# from dotenv import load_dotenv
+# import requests,json,os
+# load_dotenv()
+
+# def get_weather(city:str): #weather Fetching Logic
+#     api_key = os.getenv('API_KEY')
+#     base_url = 'https://api.weatherapi.com/v1/current.json?key='
+#     request_url = (base_url+api_key+'&q='+city+'&aqi=no')
+#     response = requests.request('GET',request_url)
+#     parsed = response.json()
+#     global time,city_name,temp_C,feelsLikeTemp_C,condition,humidity,cloud
+#     time = (parsed['location']['localtime'])
+#     city_name = (parsed['location']['name'])
+#     temp_C = (parsed['current']['temp_c'])
+#     feelsLikeTemp_C = (parsed['current']['feelslike_c'])
+#     condition = (parsed['current']['condition']['text'])
+#     humidity = (parsed['current']['humidity'])
+#     cloud = (parsed['current']['cloud'])
+#     return time,city_name,temp_C,feelsLikeTemp_C,condition,humidity,cloud
+
+
 
 def search():
     city = city_entry.get()
-    #print('command sucess!!')
-    result = (f'''City : {city}
-    Current Time : Na
-    Temperatur : Na
-    Real Feel : Na
-    Condition : Na
-    Humidity : Na 
-    Clouds : Na 
-    ''')
-    final_result.set(result)
+    get_weather(city)
+
+    
+    results = (f'''
+    City = {logic_fetch.city_name}
+    Time = {logic_fetch.time}
+    Temperature = {logic_fetch.temp_C}
+    Real Fell = {logic_fetch.feelsLikeTemp_C}
+    Condition = {logic_fetch.condition}
+    Humidity = {logic_fetch.humidity}
+    Clouds = {logic_fetch.cloud}
+
+     ''')
+    final_result.set(results)
+
+
 
 
     
