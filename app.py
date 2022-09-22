@@ -1,33 +1,40 @@
 from tkinter import *
-from logic_fetch import *
+from tkinter import messagebox
 import logic_fetch
 
 
 
-
 def search():
-    city = city_entry.get()
-    get_weather(city)
+    try:
+        city = city_entry.get()
+        logic_fetch.get_weather(city)
+
+        
+        results = (f'''
+        City = {logic_fetch.city_name}
+        Time = {logic_fetch.time}
+        Temperature = {logic_fetch.temp_C}
+        Real Feel = {logic_fetch.feelsLikeTemp_C}
+        Condition = {logic_fetch.condition}
+        Humidity = {logic_fetch.humidity}
+        Clouds = {logic_fetch.cloud}
+
+        ''')
+        final_result.set(results)
+    
+    except : 
+        messagebox.showerror('Erorr','City Not Found!!')
+        final_result.set('City Not Found - Please Try Again !!')
 
     
-    results = (f'''
-    City = {logic_fetch.city_name}
-    Time = {logic_fetch.time}
-    Temperature = {logic_fetch.temp_C}
-    Real Fell = {logic_fetch.feelsLikeTemp_C}
-    Condition = {logic_fetch.condition}
-    Humidity = {logic_fetch.humidity}
-    Clouds = {logic_fetch.cloud}
 
-     ''')
-    final_result.set(results)
 
 
 
 
     
 def create_app():
-    root = Tk()
+    root = Tk()    
     global final_result
     final_result = StringVar()
 
@@ -62,8 +69,10 @@ def create_app():
     
     result_text = Label(win,text='Results').grid(row=4,column=0)
 
-    result_area = Label(win,textvariable=final_result,bg='White',fg='Black')
-    result_area.grid(row=5,column=0)
+    result_area = Label(win,textvariable=final_result,bg='White',fg='#1D1A31')
+    result_area.grid(row=6,column=0)
+
+    credit_area = Label(root,text=" | Build By: Rahid Mondal ©2022 || Under Development || v-0.1dv ").pack()
 
 
 
