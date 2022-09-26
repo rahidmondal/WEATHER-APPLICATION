@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 import logic_fetch
+import webbrowser
 
 
 
@@ -21,16 +22,18 @@ def search():
 
         ''')
         final_result.set(results)
+        print(logic_fetch.icon)
+        
+        #condition_icon = PhotoImage(file=logic_fetch.icon)
+        
     
     except : 
         messagebox.showerror('Erorr','City Not Found!!')
         final_result.set('City Not Found - Please Try Again !!')
 
+def callback(url): #Giving credits to weather Api
+   webbrowser.open_new_tab(url)
     
-
-
-
-
 
     
 def create_app():
@@ -72,7 +75,19 @@ def create_app():
     result_area = Label(win,textvariable=final_result,bg='White',fg='#1D1A31')
     result_area.grid(row=6,column=0)
 
+    
+
+
+
+#Credits Area
     credit_area = Label(root,text=" | Build By: Rahid Mondal ©2022 || Under Development || v-0.1dv ").pack()
+    weather_api_text = Label(root,text='Powered by WeatherAPI.com :)',font=('Helveticabold', 8), fg="blue", cursor="hand2")
+    weather_api_text.pack()
+    weather_api_text.bind("<Button-1>", lambda e:
+    callback("https://www.weatherapi.com/"))
+
+
+
 
 
 
