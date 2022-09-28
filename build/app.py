@@ -3,8 +3,12 @@ from tkinter import messagebox
 import logic_fetch
 import webbrowser
 
+root = Tk() 
 
-
+#resources
+app_icon = PhotoImage(file='Resources/icon.png')
+app_background = PhotoImage(file='Resources/bg.png')
+icon = PhotoImage(file='cdn.weatherapi.com/weather/64x64/day/113.png')
 def search():
     try:
         city = city_entry.get()
@@ -22,11 +26,15 @@ def search():
 
         ''')
         final_result.set(results)
-        print(logic_fetch.icon)
+        icon_path = logic_fetch.icon
+        global final_icon_path
+        final_icon_path = icon_path[2:]
+        icon_update(final_icon_path)
         
-        #condition_icon = PhotoImage(file=logic_fetch.icon)
-        
-    
+
+
+
+
     except : 
         messagebox.showerror('Erorr','City Not Found!!')
         final_result.set('City Not Found - Please Try Again !!')
@@ -34,16 +42,21 @@ def search():
 def callback(url): #Giving credits to weather Api
    webbrowser.open_new_tab(url)
     
+def icon_update(path:str):
+    icon_updated = PhotoImage(file=path)
+    root.config(icon=icon_updated)
+    updated_icon_area = Label(win,image=icon_updated)
 
+    win.config(icon_area=updated_icon_area)
     
 def create_app():
-    root = Tk()    
-    global final_result
+   
+    global final_result,icon_photo,icon_area,win
+    final_icon_path = StringVar()
     final_result = StringVar()
 
-    #resources
-    app_icon = PhotoImage(file='Resources/icon.png')
-    app_background = PhotoImage(file='Resources/bg.png')
+
+
 
     #main_geomtry
     root.geometry('650x350')
@@ -67,20 +80,29 @@ def create_app():
     city_entry.insert(0,'New Delhi')
     city_entry.grid(row=2,column=2)
 
-    Search_Button = Button(win,text='Search',command=search)
-    Search_Button.grid(row=3,column=2)
-    
-    result_text = Label(win,text='Results').grid(row=4,column=0)
+
+    result_text = Label(win,text='Results').grid(row=5,column=0)
 
     result_area = Label(win,textvariable=final_result,bg='White',fg='#1D1A31')
     result_area.grid(row=6,column=0)
+
+    icon_text = Label(win,text='Condition').grid(row=5,column=2)
+    icon_area = Label(win,image=icon)
+    icon_area.grid(row=6,column=2)
+
+    Search_Button = Button(win,text='Search',command=search)
+    Search_Button.grid(row=3,column=2)
+
+    
+
+
 
     
 
 
 
 #Credits Area
-    credit_area = Label(root,text=" | Build By: Rahid Mondal ©2022 || Under Development || v-0.1dv ").pack()
+    credit_area = Label(root,text=" | Build By: Rahid Mondal ©2022 || Under Development || v-0.2dv ").pack()
     weather_api_text = Label(root,text='Powered by WeatherAPI.com :)',font=('Helveticabold', 8), fg="blue", cursor="hand2")
     weather_api_text.pack()
     weather_api_text.bind("<Button-1>", lambda e:
