@@ -9,7 +9,7 @@ root = Tk()
 #resources
 app_icon = PhotoImage(file='Resources/icon.png')
 app_background = PhotoImage(file='Resources/bg.png')
-icon_default = PhotoImage(file='cdn.weatherapi.com/weather/64x64/night/200.png')
+icon_default = PhotoImage(file='cdn.weatherapi.com/weather/64x64/day/176.png')
 
 
 def search():
