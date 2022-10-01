@@ -50,7 +50,7 @@ def create_app():
 
 
     #main_geomtry
-    root.geometry('650x350')
+    root.geometry('650x360')
     root.iconphoto(True,app_icon)
     root.title(" 날씨[Nalssi] - Weather Applcation (version - 0.1dv)")
     bg_image = Label(root,image=app_background)
@@ -62,22 +62,26 @@ def create_app():
     title_text.pack()
 
     win = Frame(root,bg='#ACFAE5',relief=SUNKEN)
+    
     win.pack()
+    empty_label = Label(win,text="",bg='#ACFAE5').grid(row=1,column=2)
 
-    City_Text = Label(win,text='Enter City').grid(row=2)
+    City_Text = Label(win,text='Enter City').grid(row=2,column=1)
     
     city_entry = Entry(win)
     city_entry.insert(0,'New Delhi')
     city_entry.grid(row=2,column=2)
+    empty_label_2 = Label(win,text="",bg='#ACFAE5').grid(row=2,column=3)
 
-    Search_Button = Button(win,text='Search',command=search)
-    Search_Button.grid(row=3,column=2)
 
-    result_text = Label(win,text='Results').grid(row=5,column=0)
+    Search_Button = Button(win,text='Search',command=search,relief=RAISED)
+    Search_Button.grid(row=3,column=2,padx=10,pady=10)
 
-    result_area = Label(win,textvariable=final_result,bg='White',fg='#1D1A31',relief=SUNKEN)
+    result_text = Label(win,text='Results').grid(row=5,column=1)
 
-    result_area.grid(row=6,column=0)
+    result_area = Label(win,textvariable=final_result,bg='#ACFAE5',fg='#1D1A31',width=35,height=10, relief=FLAT)
+
+    result_area.grid(row=6,column=1)
 
 
 
