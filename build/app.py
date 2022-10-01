@@ -52,7 +52,7 @@ def create_app():
     #main_geomtry
     root.geometry('650x360')
     root.iconphoto(True,app_icon)
-    root.title(" 날씨[Nalssi] - Weather Applcation (version - 0.1dv)")
+    root.title(" 날씨[Nalssi] - Weather Applcation (version - 0.2dv)")
     bg_image = Label(root,image=app_background)
     bg_image.place(x=0,y=0,relwidth=1,relheight=1)
 
@@ -91,7 +91,7 @@ def create_app():
    
 
 #Credits Area
-    credit_area = Label(root,text=" | Build By: Rahid Mondal ©2022 || Under Development || v-0.2dv ").pack()
+    credit_area = Label(root,text=" | Build By: Rahid Mondal ©2022 || Under Development || v0.2-dv ").pack()
     weather_api_text = Label(root,text='Powered by WeatherAPI.com :)',font=('Helveticabold', 8), fg="blue", cursor="hand2")
     weather_api_text.pack()
     weather_api_text.bind("<Button-1>", lambda e:
