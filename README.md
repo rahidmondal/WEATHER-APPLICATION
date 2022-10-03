@@ -11,6 +11,9 @@ This Weather Applcation will  have Three Sub-Applcation
 - Web Version - This is planned 
 
 
+## Setup 
+
+
 
 
 
@@ -22,6 +25,13 @@ To get Api key go to
 https://www.weatherapi.com/
 
 Create a Free account and Generate a Api Key 
+
+## Demo Image
+![Demo_1](Demo/Demo_Image_2.png)
+![Demo_2](Demo/Demo_image_3.png)
+![Demo_3](Demo/Demo-image_1.png)
+
+## Changelog
 
 
 ## License
