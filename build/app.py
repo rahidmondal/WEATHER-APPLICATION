@@ -46,9 +46,6 @@ def create_app():
     global final_result,city_entry
     final_result = StringVar()
 
-
-
-
     #main_geomtry
     root.geometry('650x360')
     root.iconphoto(True,app_icon)
@@ -60,6 +57,20 @@ def create_app():
     #widgets
     title_text = Label(text='날씨[Nalssi] - Weather Applcation',font=('Times Regular',28),bg='#BBB5F1')
     title_text.pack()
+    
+    #Menue Bar 
+    menubar = Menu(root)
+    #Adding Menue Items
+    window = Menu(menubar,tearoff=0)
+    menubar.add_cascade(label='window',menu=window)
+    window.add_command(label='Other',command=None)
+
+    Help = Menu(menubar,tearoff=0)
+    menubar.add_cascade(label='Help',menu=Help)
+    Help.add_command(label='Help',command=None)
+    Help.add_separator()
+    Help.add_command(label="Licence",command=None)
+ 
 
     win = Frame(root,bg='#ACFAE5',relief=SUNKEN)
     
@@ -98,6 +109,9 @@ def create_app():
     callback("https://www.weatherapi.com/"))
 
     #Final Call
+    root.config(menu=menubar)
+    mainloop()
+
     root.mainloop()
 
 
