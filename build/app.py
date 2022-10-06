@@ -71,37 +71,35 @@ def create_app():
     Help.add_separator()
     Help.add_command(label="Licence",command=None)
  
-
+    #Main Frame 
     win = Frame(root,bg='#ACFAE5',relief=SUNKEN)
-    
     win.pack()
-    empty_label = Label(win,text="",bg='#ACFAE5').grid(row=1,column=2)
 
+    #Main Frame Widgets 
+    empty_label = Label(win,text="",bg='#ACFAE5').grid(row=1,column=2)
     City_Text = Label(win,text='Enter City').grid(row=2,column=1)
-    
     city_entry = Entry(win)
     city_entry.insert(0,'New Delhi')
     city_entry.grid(row=2,column=2)
     empty_label_2 = Label(win,text="",bg='#ACFAE5').grid(row=2,column=3)
-
-
     Search_Button = Button(win,text='Search',command=search,relief=RAISED)
     Search_Button.grid(row=3,column=2,padx=10,pady=10)
-
     result_text = Label(win,text='Results').grid(row=5,column=1)
-
     result_area = Label(win,textvariable=final_result,bg='#ACFAE5',fg='#1D1A31',width=35,height=10, relief=FLAT)
-
     result_area.grid(row=6,column=1)
-
-
-
     icon_text = Label(win,text='Condition').grid(row=5,column=2)
     icon_area = Label(win,image=icon_default)
     icon_area.grid(row=6,column=2)
    
+    #Credits Page 
+    credits = Frame(root,relief=SUNKEN)
+    credits.pack()
+    #Credits Page Widgets 
+    heading_text = Label(credits,text="Credits").grid()
+    main_text_area = Label(credits,text="Credits will be displayed here ").grid()
 
-#Credits Area
+
+    #Credits Area
     credit_area = Label(root,text=" | Build By: Rahid Mondal ©2022 || Under Development || v0.3-dv ").pack()
     weather_api_text = Label(root,text='Powered by WeatherAPI.com :)',font=('Helveticabold', 8), fg="blue", cursor="hand2")
     weather_api_text.pack()
