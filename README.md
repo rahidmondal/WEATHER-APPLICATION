@@ -37,6 +37,9 @@ API_KEY=(Insert the API Keys Here without brackets or Semi colons)
 ![Demo_3](Resources/Demo/Demo-image_1.png)
 
 ## Changelog
+v0.1-dv : Basic Application With only Console Version and Gui Basic
+v0.2-dv : More Development in GUI part with Icon Part
+v0.3-dv : Dynamic Icon and Improved Code
 
 
 ## License

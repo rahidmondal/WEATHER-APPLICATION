@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
-import logic_fetch
 import webbrowser
+import logic_fetch
 
 #Initilazing tk window in the starting 
 root = Tk() 
