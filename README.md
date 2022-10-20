@@ -2,29 +2,48 @@
 # 날씨 [Nalssi] - Weather Application
 
 This is simple Weather Application Named - 날씨 [Nalssi]
-This Weather Applcation will  have Three Sub-Applcation
-
 - Console Version [fetch_logic.py] 
 
 - Gui Version [app.py] - This is under development .
 
-- Web Version - This is planned 
+## Setup 
+ 
+1. Clone the Repository and Add to your local machine  or Download as Zip file and Unzip The Files in Your Desired Directory File
+```bash
+git clone https://github.com/rahidmondal/WEATHER-APPLICATION.git 
+
+```
+
+2. Create a Folder name .env 
+3. Go to [Weather  API
+](https://www.weatherapi.com/
+) site and Create a accpunt and Obtain API Keys .
+
+4. Add the API keys in the .env file as below formate
+```
+API_KEY=(Insert the API Keys Here without brackets or Semi colons) 
+```
+5. Download All Dependesies thorugh requirments.txt file
+
+6. Test the working - Fell Free To Open a pull request for any Issue 
+
+7. Setup Finished 
 
 
 
+## Demo Image
+![Demo_1](Resources/Demo/Demo_Image_2.png)
+![Demo_2](Resources/Demo/Demo_image_3.png)
+![Demo_3](Resources/Demo/Demo-image_1.png)
 
-
-## Environment Variables
-This Project runs on Api inorder to run the application Properly you 
-Have to create a .env file and Add Api Key in it 
-
-To get Api key go to  
-https://www.weatherapi.com/
-
-Create a Free account and Generate a Api Key 
+## Changelog
+v0.1-dv : Basic Application With only Console Version and Gui Basic
+v0.2-dv : More Development in GUI part with Icon Part
+v0.3-dv : Dynamic Icon and Improved Code
 
 
 ## License
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](licence)
 
-[MIT](https://choosealicense.com/licenses/mit/)
+
 
