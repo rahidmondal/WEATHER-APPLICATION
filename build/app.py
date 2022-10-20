@@ -13,6 +13,7 @@ icon_default = PhotoImage(file='cdn.weatherapi.com/weather/64x64/day/176.png')
 
 
 def search():
+    """Finds the Weather Using login_fetch Module and return to create_app"""
     try:
         city = city_entry.get()
         logic_fetch.get_weather(city)

@@ -1,8 +1,10 @@
+"""Works as the Fetching Module to Get weather"""
 import requests,json,os
 from dotenv import load_dotenv
 load_dotenv() #loads env folder into the program 
 
-def get_weather(city:str): #weather Fetching Logic
+def get_weather(city:str): 
+        """This function Fetch Weather and Return to User """
         api_key = os.getenv('API_KEY')
         base_url = 'https://api.weatherapi.com/v1/current.json?key='
         request_url = (base_url+api_key+'&q='+city+'&aqi=no')
@@ -20,6 +22,7 @@ def get_weather(city:str): #weather Fetching Logic
         return time,city_name,temp_C,feelsLikeTemp_C,condition,humidity,cloud,icon
 
 if __name__ == '__main__': #Solo console build- wont execute in foreing file 
+    """Console Based Program for the Weather Application"""
     print("=----------------------------------------------=")
     print("| 날씨[WeatherApplication]-Console Build v-0.1 |")
     print("=----------------------------------------------=")
@@ -39,7 +42,6 @@ if __name__ == '__main__': #Solo console build- wont execute in foreing file
                 print('Condition : ',condition)
                 print('Humidity : ',humidity)
                 print('Clouds : ', cloud)
-                print('Icon : ',icon)
                 print("------------------------------------------------")
             except:
                 print('City Not Found - Please Try Again !!')

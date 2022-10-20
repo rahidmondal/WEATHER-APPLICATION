@@ -1,0 +1,6 @@
+requests
+json
+os
+python-dotenv
+tkinter
+webbrowser
