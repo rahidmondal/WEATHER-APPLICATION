@@ -48,7 +48,7 @@ def create_app():
     final_result = StringVar()
 
     #main_geomtry
-    root.geometry('650x360')
+    root.geometry('650x390')
     root.iconphoto(True,app_icon)
     root.title(" 날씨[Nalssi] - Weather Applcation (version - v0.3-dv)")
     bg_image = Label(root,image=app_background)
@@ -59,18 +59,19 @@ def create_app():
     title_text = Label(text='날씨[Nalssi] - Weather Applcation',font=('Times Regular',28),bg='#BBB5F1')
     title_text.pack()
     
-    #Menue Bar 
-    menubar = Menu(root)
-    #Adding Menue Items
-    window = Menu(menubar,tearoff=0)
-    menubar.add_cascade(label='window',menu=window)
-    window.add_command(label='Other',command=None)
+    # Will be  Inclueded in the Next Version of the Application 
+    # #Menue Bar 
+    # menubar = Menu(root)
+    # #Adding Menue Items
+    # window = Menu(menubar,tearoff=0)
+    # menubar.add_cascade(label='window',menu=window)
+    # window.add_command(label='Other',command=None)
 
-    Help = Menu(menubar,tearoff=0)
-    menubar.add_cascade(label='Help',menu=Help)
-    Help.add_command(label='Help',command=None)
-    Help.add_separator()
-    Help.add_command(label="Licence",command=None)
+    # Help = Menu(menubar,tearoff=0)
+    # menubar.add_cascade(label='Help',menu=Help)
+    # Help.add_command(label='Help',command=None)
+    # Help.add_separator()
+    # Help.add_command(label="Licence",command=None)
  
     #Main Frame 
     win = Frame(root,bg='#ACFAE5',relief=SUNKEN)
@@ -92,12 +93,6 @@ def create_app():
     icon_area = Label(win,image=icon_default)
     icon_area.grid(row=6,column=2)
    
-    #Credits Page 
-    credits = Frame(root,relief=SUNKEN)
-    credits.pack()
-    #Credits Page Widgets 
-    heading_text = Label(credits,text="Credits").grid()
-    main_text_area = Label(credits,text="Credits will be displayed here ").grid()
 
 
     #Credits Area
@@ -107,9 +102,9 @@ def create_app():
     weather_api_text.bind("<Button-1>", lambda e:
     callback("https://www.weatherapi.com/"))
 
-    #Final Call
-    root.config(menu=menubar)
-    mainloop()
+    # #Final Call
+    # root.config(menu=menubar)
+    # mainloop()
 
     root.mainloop()
 
