@@ -3,7 +3,7 @@ from tkinter import messagebox
 import webbrowser
 import logic_fetch
 
-#Initilazing tk window in the starting 
+#Initializing tk window in the starting 
 root = Tk() 
 
 #resources
@@ -36,7 +36,7 @@ def search():
 
 
     except : 
-        messagebox.showerror('Erorr','City Not Found!!')
+        messagebox.showerror('Error','City Not Found!!')
         final_result.set('City Not Found - Please Try Again !!')
 
 def callback(url): #Giving credits to weather Api
@@ -47,32 +47,20 @@ def create_app():
     global final_result,city_entry
     final_result = StringVar()
 
-    #main_geomtry
+    #main_geometry
     root.geometry('650x390')
     root.iconphoto(True,app_icon)
-    root.title(" 날씨[Nalssi] - Weather Applcation (version - v0.3-dv)")
+    root.iconbitmap("Resources\icon.ico")
+    root.title(" 날씨[Nalssi] - Weather Application (version - v0.4-dv)")
 
     bg_image = Label(root,image=app_background)
     bg_image.place(x=0,y=0,relwidth=1,relheight=1)
 
 
     #widgets
-    title_text = Label(text='날씨[Nalssi] - Weather Applcation',font=('Times Regular',28),bg='#BBB5F1')
+    title_text = Label(text='날씨[Nalssi] - Weather Application',font=('Times Regular',28),bg='#BBB5F1')
     title_text.pack()
-    
-    # Will be  Inclueded in the Next Version of the Application 
-    # #Menue Bar 
-    # menubar = Menu(root)
-    # #Adding Menue Items
-    # window = Menu(menubar,tearoff=0)
-    # menubar.add_cascade(label='window',menu=window)
-    # window.add_command(label='Other',command=None)
 
-    # Help = Menu(menubar,tearoff=0)
-    # menubar.add_cascade(label='Help',menu=Help)
-    # Help.add_command(label='Help',command=None)
-    # Help.add_separator()
-    # Help.add_command(label="Licence",command=None)
  
     #Main Frame 
     win = Frame(root,bg='#ACFAE5',relief=SUNKEN)
@@ -97,7 +85,7 @@ def create_app():
 
 
     #Credits Area
-    credit_area = Label(root,text=" | Build By: Rahid Mondal ©2022 || Under Development || v0.3-dv ").pack()
+    credit_area = Label(root,text=" | Build By: Rahid Mondal ©2022 || Under Development || v0.4-dv ").pack()
     weather_api_text = Label(root,text='Powered by WeatherAPI.com :)',font=('Helveticabold', 8), fg="blue", cursor="hand2")
     weather_api_text.pack()
     weather_api_text.bind("<Button-1>", lambda e:
