@@ -50,6 +50,7 @@ def create_app():
     #main_geometry
     root.geometry('650x390')
     root.iconphoto(True,app_icon)
+    root.iconbitmap("Resources\icon.ico")
     root.title(" 날씨[Nalssi] - Weather Application (version - v0.3-dv)")
 
     bg_image = Label(root,image=app_background)

@@ -11,8 +11,11 @@ import logic_fetch
 gui.theme('BlueMono')
 
 #Layout 
+background_layout = []
 layout = [
     [gui.Text('날씨[Nalssi] - Weather Application v-0.4dv',size=(50,2),background_color="#BBB5F1")],
+    [gui.Image("Resources/bg.png",expand_x=True,expand_y=True)],
+
     [gui.Text("Enter City"),gui.Input(default_text="New Delhi",key="City")],
     [gui.Button('Search')],
     [gui.Text("Result"),gui.Text("Condition")],
