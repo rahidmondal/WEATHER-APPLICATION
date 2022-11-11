@@ -38,7 +38,7 @@ API_KEY=(Insert the API Keys Here without brackets or Semi colons)
 * v0.1-dv : Basic Application With only Console Version and Gui Basic
 * v0.2-dv : More Development in GUI part with Icon Part
 * v0.3-dv : Dynamic Icon and Improved Code
-* v0.4-dv : Use of Pysimple GUi for better Ui .
+* v0.4-dv : Use of Pysimple GUi for better Ui (New Part - Extra Dev) - First Executable file  .
 
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](licence)
